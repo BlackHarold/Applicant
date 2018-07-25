@@ -1,4 +1,4 @@
-package java;
+package java.home.blackharold;
 
 
 import java.util.Arrays;
@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class Main {
     
     //    Condition task / условия задачи
-    final static int[] A = {5, 2, 4, 6, 1, 3, 2, 6};
-    static int p = 1, r = A.length, q;
+    private static int[] A = {5, 2, 4, 6, 1, 3, 2, 6};
+    private static int p = 1, r = A.length, q;
     private static Main sort = new Main();
     //    Additional arrays
     private int[] left;
