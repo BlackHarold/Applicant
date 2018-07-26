@@ -1,14 +1,14 @@
-package java.home.blackharold;
+package home.blackharold.java;
 
 import java.util.Arrays;
 
 public class Sort {
     
-    //    Condition task / условия задачи
-    final static int[] A = {1,3,2,7,4,5,6,10,1,3};
+    // Condition task / условия задачи
+    final static int[] A = {1000, 2000, 10, 12, 13, 5, 2, 4, 6, 1, 3, 2, 6};
     static int p = 1, r = A.length, q;
     private static Sort sort = new Sort();
-    //    Additional arrays
+    // Additional arrays
     private int[] left;
     private int[] right;
     
@@ -24,16 +24,16 @@ public class Sort {
             left = new int[q];
             right = new int[r - q];
 
-//            Заполнение и сортировка частей массива
-//            Sorting additional arrays
+// Заполнение и сортировка частей массива
+// Sorting additional arrays
 
-//        Левая часть / Left side
+// Левая часть / Left side
             for (int i = 0; i < left.length; i++) {
                 left[i] = A[i];
             }
             Arrays.sort(left);
 
-//        Правая часть / Right side
+// Правая часть / Right side
             for (int i = 0; i < right.length; i++) {
                 right[i] = A[q + i];
             }
@@ -49,7 +49,7 @@ public class Sort {
      */
     void Merge(int[] A, int p, int q, int r) {
 
-//    Слияние массивов
+// Слияние массивов
         int i = 0, j = 0, k = 0; //счетчики
         
         while (i <= left.length - 1 && j <= right.length - 1) {
@@ -65,7 +65,7 @@ public class Sort {
             }
         }
 
-//            уже не сравниваю - отсортировано прежде
+// уже не сравниваю - отсортировано прежде
         while (i == left.length - 1 || j <= right.length - 1) {
             A[k] = right[j];
             j++;
@@ -76,9 +76,10 @@ public class Sort {
             i++;
             k++;
         }
-        
-        for (int each : A) {
-            System.out.print(each + ":");
+    
+        for (int each: A
+             ) {
+            System.out.println(each);
             
         }
     }
