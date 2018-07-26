@@ -1,14 +1,13 @@
 package java.home.blackharold;
 
-
 import java.util.Arrays;
 
-public class Main {
+public class Sort {
     
     //    Condition task / условия задачи
-    private static int[] A = {5, 2, 4, 6, 1, 3, 2, 6};
-    private static int p = 1, r = A.length, q;
-    private static Main sort = new Main();
+    final static int[] A = {1,3,2,7,4,5,6,10,1,3};
+    static int p = 1, r = A.length, q;
+    private static Sort sort = new Sort();
     //    Additional arrays
     private int[] left;
     private int[] right;
@@ -44,7 +43,7 @@ public class Main {
     
     /**
      * Решение задачи по разработке метода
-     *
+     * <p>
      * Метод из задачи Merge(A,p,q,r) и его реализация
      * Method from task and implementation
      */
@@ -53,7 +52,7 @@ public class Main {
 //    Слияние массивов
         int i = 0, j = 0, k = 0; //счетчики
         
-        while (i <= left.length - 1) {
+        while (i <= left.length - 1 && j <= right.length - 1) {
             
             if (left[i] <= right[j]) {
                 A[k] = left[i];
@@ -65,11 +64,16 @@ public class Main {
                 k++;
             }
         }
-        
-        while (j <= right.length - 1) {
+
 //            уже не сравниваю - отсортировано прежде
+        while (i == left.length - 1 || j <= right.length - 1) {
             A[k] = right[j];
             j++;
+            k++;
+        }
+        while (j == right.length - 1 || i <= left.length - 1) {
+            A[k] = left[i];
+            i++;
             k++;
         }
         
